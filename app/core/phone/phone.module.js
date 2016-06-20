@@ -1,5 +1,8 @@
 import angular from 'angular';
 import ngResource from 'angular-resource';
+import PhoneFactory from './phone.service.js';
 
-// Define the `core.phone` module
-export default angular.module('core.phone', [ngResource]).name;
+
+export default angular.module('core.phone', [ngResource])
+.factory('Phone', PhoneFactory)
+.name;

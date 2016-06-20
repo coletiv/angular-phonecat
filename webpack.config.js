@@ -141,9 +141,10 @@ module.exports = function makeWebpackConfig () {
 
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
-      new CopyWebpackPlugin([{
-        from: __dirname + '/src/images'
-      }])
+      new CopyWebpackPlugin([
+        {from: __dirname + '/app/img'},
+        {from: __dirname + '/app/phones'}
+      ])
     )
   }
 
