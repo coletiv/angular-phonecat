@@ -1,6 +1,6 @@
-'use strict';
+import angular from 'angular';
 
-angular.
+export default angular.
   module('phonecatApp').
   config(['$locationProvider' ,'$routeProvider',
     function config($locationProvider, $routeProvider) {
@@ -15,4 +15,5 @@ angular.
         }).
         otherwise('/phones');
     }
-  ]);
+  ])
+  .name;

@@ -1,10 +1,14 @@
-'use strict';
+import angular from 'angular';
+
+import core from './core/core.module.js';
+import phoneDetail from './phone-detail/phone-detail.module.js';
+import phoneList from './phone-list/phone-list.module.js';
 
 // Define the `phonecatApp` module
-angular.module('phonecatApp', [
+export default angular.module('phonecatApp', [
   'ngAnimate',
   'ngRoute',
-  'core',
-  'phoneDetail',
-  'phoneList',
-]);
+  core,
+  phoneDetail,
+  phoneList,
+]).name;
