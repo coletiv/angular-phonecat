@@ -1,19 +1,14 @@
-import angular from 'angular';
+routing.$inject = ['$locationProvider', '$routeProvider'];
 
-export default angular.
-  module('phonecatApp').
-  config(['$locationProvider' ,'$routeProvider',
-    function config($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix('!');
+export default function routing($locationProvider, $routeProvider) {
+  $locationProvider.hashPrefix('!');
 
-      $routeProvider.
-        when('/phones', {
-          template: '<phone-list></phone-list>'
-        }).
-        when('/phones/:phoneId', {
-          template: '<phone-detail></phone-detail>'
-        }).
-        otherwise('/phones');
-    }
-  ])
-  .name;
+  $routeProvider.
+    when('/phones', {
+      template: '<phone-list></phone-list>'
+    }).
+    when('/phones/:phoneId', {
+      template: '<phone-detail></phone-detail>'
+    }).
+    otherwise('/phones');
+};

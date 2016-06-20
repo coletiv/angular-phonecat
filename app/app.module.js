@@ -6,6 +6,8 @@ import core from './core/core.module.js';
 import phoneDetail from './phone-detail/phone-detail.module.js';
 import phoneList from './phone-list/phone-list.module.js';
 
+import routing from './app.config.js';
+
 // CSS
 import 'bootstrap/dist/css/bootstrap.css';
 import './app.css';
@@ -19,4 +21,6 @@ export default angular.module('phonecatApp', [
   core,
   phoneDetail,
   phoneList,
-]).name;
+]).
+.config(routing)
+.name;
