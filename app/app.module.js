@@ -21,6 +21,6 @@ export default angular.module('phonecatApp', [
   core,
   phoneDetail,
   phoneList,
-]).
+])
 .config(routing)
 .name;

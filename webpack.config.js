@@ -94,6 +94,13 @@ module.exports = function makeWebpackConfig () {
       // You can add here any file extension you want to get copied to your output
       test: /\.(png|jpg|eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/,
       loader: 'url'      
+    },    
+    {
+      // HTML LOADER
+      // Reference: https://github.com/webpack/raw-loader
+      // Allow loading html through js
+      test: /\.html$/,
+      loader: 'raw'
     }]
   };
 

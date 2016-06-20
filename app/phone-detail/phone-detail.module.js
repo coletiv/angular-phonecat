@@ -1,8 +1,13 @@
 import angular from 'angular';
+import ngRoute from 'angular-route';
+
 import phoneModule from '../core/phone/phone.module.js';
+import phoneDetail from './phone-detail.component.js';
 
 // Define the `phoneDetail` module
 export default angular.module('phoneDetail', [
-  'ngRoute',
+  ngRoute,
   phoneModule
-]).name;
+])
+.component('phoneDetail', phoneDetail)
+.name;
