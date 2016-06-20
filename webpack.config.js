@@ -25,7 +25,7 @@ module.exports = function makeWebpackConfig () {
    * Entry
    * Reference: http://webpack.github.io/docs/configuration.html#entry
    */  
-  config.entry = ['./app/app.module.js'];
+  config.entry = './app/app.module.js';
 
   /**
    * Output
