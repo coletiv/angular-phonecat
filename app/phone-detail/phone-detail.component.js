@@ -16,9 +16,9 @@ class PhoneDetailController {
 PhoneDetailController.$inject = ['$routeParams', 'Phone'];
 
 
-export default function phoneDetail() {
-  return {
-    template: require('./phone-detail.template.html'),
-    controller: PhoneDetailController
-  };
+const phoneDetail = {
+  template: require('./phone-detail.template.html'),
+  controller: PhoneDetailController
 }
+
+export default phoneDetail;

@@ -1,7 +1,7 @@
 class PhoneListController {
   
   constructor(Phone) {
-    this.phones = Phone.query();
+  	this.phones = Phone.query();
     this.orderProp = 'age';
   }
 }
@@ -9,8 +9,9 @@ class PhoneListController {
 PhoneListController.$inject = ['Phone'];
 
 
-export default function phoneList() {
-  return {
-    template: require('./phone-list.template.html'),
-    controller: PhoneListController};
-}
+const phoneListModule = {
+  template  : require('./phone-list.template.html'),
+  controller: PhoneListController
+};
+
+export default phoneListModule;
