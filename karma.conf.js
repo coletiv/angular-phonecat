@@ -1,31 +1,41 @@
 //jshint strict: false
+
+var webpackConfig = require('./webpack.config.js');
+
+// what we define in the "files" object will serve as the entry point
+webpackConfig.entry = {};
+
 module.exports = function(config) {
   config.set({
 
-    basePath: './app',
-
     files: [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-animate/angular-animate.js',
-      'bower_components/angular-resource/angular-resource.js',
-      'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      '**/*.module.js',
-      '*!(.module|.spec).js',
-      '!(bower_components)/**/*!(.module|.spec).js',
-      '**/*.spec.js'
+      './app/app.module.js',      
+      './node_modules/angular-mocks/angular-mocks.js',
+      './app/**/*.spec.js'      
     ],
+
+    preprocessors: {
+      './app/app.module.js': ["webpack"],      
+      './app/**/*.spec.js': ["babel"]    
+    },
+  
+    webpack: webpackConfig,
+
+    webpackMiddleware: {
+      noInfo: true
+    },
 
     autoWatch: true,
 
     frameworks: ['jasmine'],
 
-    browsers: ['Chrome', 'Firefox'],
+    browsers: ['Chrome'],
 
     plugins: [
-      'karma-chrome-launcher',
-      'karma-firefox-launcher',
-      'karma-jasmine'
+      'karma-chrome-launcher',      
+      'karma-jasmine',
+      'karma-webpack',
+      'karma-babel-preprocessor'
     ]
 
   });
